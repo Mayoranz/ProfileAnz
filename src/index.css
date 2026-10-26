@@ -175,3 +175,130 @@ dialog.telemetry-modal::backdrop {
     rgba(197, 179, 150, 0.1) 4px
   );
 }
+
+/* Easter Egg: Permanent Constant Glitch Effects */
+@keyframes persistent-glitch-1 {
+  0% {
+    clip-path: inset(8% 0 62% 0);
+    transform: translate3d(-7px, 0, 0) skewX(-5deg);
+    opacity: 0.92;
+  }
+  18% {
+    clip-path: inset(42% 0 26% 0);
+    transform: translate3d(9px, 0, 0) skewX(6deg);
+    opacity: 0.95;
+  }
+  36% {
+    clip-path: inset(68% 0 6% 0);
+    transform: translate3d(-9px, 0, 0) skewX(-3deg);
+    opacity: 0.88;
+  }
+  54% {
+    clip-path: inset(22% 0 48% 0);
+    transform: translate3d(6px, 0, 0) skewX(4deg);
+    opacity: 0.92;
+  }
+  72% {
+    clip-path: inset(78% 0 3% 0);
+    transform: translate3d(-5px, 0, 0) skewX(-6deg);
+    opacity: 1;
+  }
+  90% {
+    clip-path: inset(34% 0 38% 0);
+    transform: translate3d(8px, 0, 0) skewX(3deg);
+    opacity: 0.9;
+  }
+  100% {
+    clip-path: inset(8% 0 62% 0);
+    transform: translate3d(-7px, 0, 0) skewX(-5deg);
+    opacity: 0.92;
+  }
+}
+
+@keyframes persistent-glitch-2 {
+  0% {
+    clip-path: inset(58% 0 12% 0);
+    transform: translate3d(7px, 0, 0) skewX(5deg);
+    opacity: 0.88;
+  }
+  22% {
+    clip-path: inset(16% 0 62% 0);
+    transform: translate3d(-9px, 0, 0) skewX(-6deg);
+    opacity: 0.95;
+  }
+  44% {
+    clip-path: inset(32% 0 38% 0);
+    transform: translate3d(8px, 0, 0) skewX(4deg);
+    opacity: 0.9;
+  }
+  66% {
+    clip-path: inset(74% 0 6% 0);
+    transform: translate3d(-7px, 0, 0) skewX(-5deg);
+    opacity: 0.88;
+  }
+  88% {
+    clip-path: inset(42% 0 32% 0);
+    transform: translate3d(6px, 0, 0) skewX(6deg);
+    opacity: 0.96;
+  }
+  100% {
+    clip-path: inset(58% 0 12% 0);
+    transform: translate3d(7px, 0, 0) skewX(5deg);
+    opacity: 0.88;
+  }
+}
+
+@keyframes persistent-main-jitter {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    filter: contrast(1.2) brightness(1.05);
+  }
+  12% {
+    transform: translate3d(-4px, 1px, 0) skewX(-2deg);
+  }
+  28% {
+    transform: translate3d(4px, -1px, 0) skewX(1.5deg);
+    filter: contrast(1.35) brightness(1.15);
+  }
+  44% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  62% {
+    transform: translate3d(5px, 1px, 0) skewX(-2.5deg);
+  }
+  78% {
+    transform: translate3d(-4px, -1px, 0) skewX(2.5deg);
+    filter: contrast(1.25);
+  }
+  92% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+@keyframes persistent-scanline-pulse {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.glitch-permanent-slice-1 {
+  opacity: 1 !important;
+  animation: persistent-glitch-1 0.22s steps(2) infinite;
+}
+
+.glitch-permanent-slice-2 {
+  opacity: 1 !important;
+  animation: persistent-glitch-2 0.26s steps(2) infinite;
+}
+
+.glitch-permanent-main {
+  animation: persistent-main-jitter 0.35s steps(3) infinite;
+}
+
+.glitch-permanent-scanlines {
+  opacity: 0.85 !important;
+  animation: persistent-scanline-pulse 0.12s steps(2) infinite;
+}

@@ -36,18 +36,32 @@ export default function HeroSection({
   const hasPlayedIntro = useRef(false);
   const isGlitchingRef = useRef(false);
 
-  // Starts false (shows formal photo as primary, glitches GitHub avatar).
-  // Once clicked, locks to true (shows GitHub avatar as primary, glitches formal photo) until page refresh.
-  const [isLockedToGithub, setIsLockedToGithub] = useState(false);
+  // Click counter:
+  // - 0 clicks: formal photo primary, glitching github avatar
+  // - 1-9 clicks: github avatar primary, glitching formal photo
+  // - 10 clicks (Easter Egg): ANZ logo primary, permanent continuous glitch, locked forever!
+  const [clickCount, setClickCount] = useState(0);
+
+  const isEasterEggLocked = clickCount >= 10;
+  const isLockedToGithub = clickCount >= 1;
 
   const isOnTrack = trackMode === 'ON TRACK';
 
   const resolvedGithubUrl = githubAvatarUrl || PROFILE_DATA.avatarUrl;
   const formalPhotoUrl = PROFILE_DATA.formalPhotoUrl || '/andhika-profile.jpg';
+  const anzLogoUrl = PROFILE_DATA.logoUrl || '/anz-logo.jpg';
 
-  // Primary image vs. Secondary (Glitch) image swap based on lock state
-  const primaryPortraitSrc = isLockedToGithub ? resolvedGithubUrl : formalPhotoUrl;
-  const glitchPortraitSrc = isLockedToGithub ? formalPhotoUrl : resolvedGithubUrl;
+  // Primary image vs. Secondary (Glitch) image swap based on lock & easter egg state
+  let primaryPortraitSrc = formalPhotoUrl;
+  let glitchPortraitSrc = resolvedGithubUrl;
+
+  if (isEasterEggLocked) {
+    primaryPortraitSrc = anzLogoUrl;
+    glitchPortraitSrc = resolvedGithubUrl;
+  } else if (isLockedToGithub) {
+    primaryPortraitSrc = resolvedGithubUrl;
+    glitchPortraitSrc = formalPhotoUrl;
+  }
 
   // Reusable GSAP Error Glitch Burst (flashes glitchPortraitSrc in horizontal tear slices & full frames)
   const triggerGlitchBurst = useCallback((onPeakCallback) => {
@@ -157,9 +171,9 @@ export default function HeroSection({
       );
   }, []);
 
-  // Periodic Occasional Error Glitch Loop (runs both before and after click!)
+  // Periodic Occasional Error Glitch Loop (runs before easter egg lock)
   useEffect(() => {
-    if (!bootComplete) return;
+    if (!bootComplete || isEasterEggLocked) return;
 
     let timeoutId;
     let isCancelled = false;
@@ -167,7 +181,7 @@ export default function HeroSection({
     const scheduleNextGlitch = () => {
       const nextDelay = gsap.utils.random(2400, 4200, 100);
       timeoutId = setTimeout(() => {
-        if (isCancelled) return;
+        if (isCancelled || isEasterEggLocked) return;
         triggerGlitchBurst();
         scheduleNextGlitch();
       }, nextDelay);
@@ -175,7 +189,7 @@ export default function HeroSection({
 
     // First glitch shortly after hero intro finishes
     const initialTimer = setTimeout(() => {
-      if (isCancelled) return;
+      if (isCancelled || isEasterEggLocked) return;
       triggerGlitchBurst();
       scheduleNextGlitch();
     }, 1800);
@@ -185,17 +199,34 @@ export default function HeroSection({
       clearTimeout(initialTimer);
       clearTimeout(timeoutId);
     };
-  }, [bootComplete, triggerGlitchBurst]);
+  }, [bootComplete, isEasterEggLocked, triggerGlitchBurst]);
 
-  // Click handler: switches primary image to GitHub profile permanently until browser refresh
+  // Click handler:
+  // - 1st click: switches primary image to GitHub profile
+  // - 2nd to 9th clicks: glitch burst + increments click counter
+  // - 10th click (Easter Egg): intense glitch overload -> locks permanently into ANZ Logo with continuous glitch!
+  // - > 10 clicks: permanently locked, no further changes possible.
   const handlePortraitClick = () => {
-    if (!isLockedToGithub) {
+    if (isEasterEggLocked) {
+      // Easter egg is permanently locked; no further changes possible
+      return;
+    }
+
+    const nextCount = clickCount + 1;
+
+    if (nextCount >= 10) {
+      // 10th click Easter Egg overload
       triggerGlitchBurst(() => {
-        setIsLockedToGithub(true);
+        setClickCount(10);
+      });
+    } else if (nextCount === 1) {
+      triggerGlitchBurst(() => {
+        setClickCount(1);
       });
     } else {
-      // Already locked to GitHub profile until refresh; clicking triggers a brief glitch flash of the initial photo
-      triggerGlitchBurst();
+      triggerGlitchBurst(() => {
+        setClickCount(nextCount);
+      });
     }
   };
 
@@ -539,16 +570,24 @@ export default function HeroSection({
                 }
               }}
               aria-label={
-                isLockedToGithub
-                  ? 'Foto profil GitHub Mayoranz aktif (efek glitch aktif)'
+                isEasterEggLocked
+                  ? 'Easter Egg: Logo ANZ terkunci dengan efek glitch permanen'
+                  : isLockedToGithub
+                  ? `Foto profil GitHub Mayoranz aktif (${clickCount}/10)`
                   : 'Klik untuk mengubah foto utama ke profil GitHub Mayoranz'
               }
               title={
-                isLockedToGithub
-                  ? 'Terkunci pada profil GitHub (Refresh halaman untuk kembali ke foto awal)'
+                isEasterEggLocked
+                  ? 'EASTER EGG // ANZ EMBLEM LOCKED (PERMANENT GLITCH)'
+                  : isLockedToGithub
+                  ? `Klik lagi untuk Easter Egg (${clickCount}/10)`
                   : 'Klik untuk beralih ke foto profil GitHub'
               }
-              className="group relative w-full max-w-[340px] rounded-lg bg-[#141414] p-2 border border-[#262626] hover:border-[#C5B396] transition-colors cursor-pointer select-none will-change-transform"
+              className={`group relative w-full max-w-[340px] rounded-lg bg-[#141414] p-2 border transition-colors select-none will-change-transform ${
+                isEasterEggLocked
+                  ? 'border-[#C5B396] shadow-[0_0_25px_rgba(197,179,150,0.18)] cursor-not-allowed'
+                  : 'border-[#262626] hover:border-[#C5B396] cursor-pointer'
+              }`}
             >
               <div className="relative rounded overflow-hidden bg-[#0F0F0F] aspect-[4/4.6]">
                 {/* Top Glitch Status Indicator Pill */}
@@ -556,26 +595,44 @@ export default function HeroSection({
                   ref={glitchBadgeRef}
                   className="absolute top-3 left-3 right-3 z-30 flex items-center justify-between pointer-events-none"
                 >
-                  <span className="px-2 py-0.5 rounded bg-[#0F0F0F]/90 border border-[#262626] font-mono-telemetry text-[10px] uppercase tracking-widest text-[#C5B396]">
-                    {isLockedToGithub ? 'SYNC // GITHUB ID' : 'ERR_GLITCH // CLICK PHOTO'}
+                  <span
+                    className={`px-2 py-0.5 rounded bg-[#0F0F0F]/90 border font-mono-telemetry text-[10px] uppercase tracking-widest ${
+                      isEasterEggLocked
+                        ? 'border-[#C5B396] text-[#EDEAE4] font-bold'
+                        : 'border-[#262626] text-[#C5B396]'
+                    }`}
+                  >
+                    {isEasterEggLocked
+                      ? 'EASTER_EGG // ANZ OVERRIDE'
+                      : isLockedToGithub
+                      ? `SYNC // GITHUB ID [${clickCount}/10]`
+                      : 'ERR_GLITCH // CLICK PHOTO'}
                   </span>
-                  <span className="px-2 py-0.5 rounded bg-[#0F0F0F]/90 border border-[#262626] font-mono-telemetry text-[10px] text-[#8E8A82]">
-                    {isLockedToGithub ? 'LOCKED' : '01 / 02'}
+                  <span
+                    className={`px-2 py-0.5 rounded bg-[#0F0F0F]/90 border font-mono-telemetry text-[10px] ${
+                      isEasterEggLocked
+                        ? 'border-[#C5B396] text-[#C5B396]'
+                        : 'border-[#262626] text-[#8E8A82]'
+                    }`}
+                  >
+                    {isEasterEggLocked ? 'PERMANENT' : isLockedToGithub ? 'LOCKED' : '01 / 02'}
                   </span>
                 </div>
 
-                {/* 1. Primary Hero LCP Image: uses fetchpriority="high" and never loading="lazy" per optimize-image-priority */}
+                {/* 1. Primary Hero LCP Image */}
                 <img
                   ref={portraitImgRef}
                   src={primaryPortraitSrc}
-                  alt={`${PROFILE_DATA.fullName} (${PROFILE_DATA.handle})`}
+                  alt={isEasterEggLocked ? 'ANZ Brand Logo' : `${PROFILE_DATA.fullName} (${PROFILE_DATA.handle})`}
                   fetchpriority="high"
                   width="340"
                   height="390"
-                  className="w-full h-full object-cover object-center will-change-transform"
+                  className={`w-full h-full object-cover object-center will-change-transform ${
+                    isEasterEggLocked ? 'glitch-permanent-main' : ''
+                  }`}
                 />
 
-                {/* 2. Secondary Full Glitch Flash Layer (above-the-fold, initially hidden -> fetchpriority="low") */}
+                {/* 2. Secondary Full Glitch Flash Layer */}
                 <img
                   ref={glitchFullRef}
                   src={glitchPortraitSrc}
@@ -590,7 +647,7 @@ export default function HeroSection({
                 {/* 3. Horizontal Glitch Slice — Top Band */}
                 <img
                   ref={sliceTopRef}
-                  src={glitchPortraitSrc}
+                  src={isEasterEggLocked ? primaryPortraitSrc : glitchPortraitSrc}
                   alt=""
                   aria-hidden="true"
                   fetchpriority="low"
@@ -599,13 +656,15 @@ export default function HeroSection({
                   style={{
                     filter: 'drop-shadow(4px 0 0 rgba(197,179,150,0.75)) drop-shadow(-4px 0 0 rgba(15,15,15,0.85))',
                   }}
-                  className="pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-0 will-change-transform"
+                  className={`pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-0 will-change-transform ${
+                    isEasterEggLocked ? 'glitch-permanent-slice-1' : ''
+                  }`}
                 />
 
                 {/* 4. Horizontal Glitch Slice — Middle Band */}
                 <img
                   ref={sliceMidRef}
-                  src={glitchPortraitSrc}
+                  src={isEasterEggLocked ? anzLogoUrl : glitchPortraitSrc}
                   alt=""
                   aria-hidden="true"
                   fetchpriority="low"
@@ -614,7 +673,9 @@ export default function HeroSection({
                   style={{
                     filter: 'drop-shadow(-5px 0 0 rgba(237,234,228,0.7)) drop-shadow(4px 0 0 rgba(197,179,150,0.7))',
                   }}
-                  className="pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-0 will-change-transform"
+                  className={`pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-0 will-change-transform ${
+                    isEasterEggLocked ? 'glitch-permanent-slice-2' : ''
+                  }`}
                 />
 
                 {/* 5. Horizontal Glitch Slice — Bottom Band */}
@@ -632,7 +693,7 @@ export default function HeroSection({
                   className="pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-0 will-change-transform"
                 />
 
-                {/* 6. Digital Scanline & Signal Tear Overlay during glitch */}
+                {/* 6. Digital Scanline & Signal Tear Overlay */}
                 <div
                   ref={scanlineRef}
                   aria-hidden="true"
@@ -640,22 +701,26 @@ export default function HeroSection({
                     backgroundImage:
                       'repeating-linear-gradient(0deg, rgba(15,15,15,0.55) 0px, rgba(15,15,15,0.55) 2px, rgba(197,179,150,0.12) 2px, rgba(197,179,150,0.12) 4px)',
                   }}
-                  className="pointer-events-none absolute inset-0 z-20 opacity-0"
+                  className={`pointer-events-none absolute inset-0 z-20 opacity-0 ${
+                    isEasterEggLocked ? 'glitch-permanent-scanlines' : ''
+                  }`}
                 />
 
                 {/* Bottom Card Overlay (Flat Matte Bar) */}
                 <div className="absolute bottom-0 inset-x-0 z-30 bg-[#141414]/95 border-t border-[#262626] p-4 flex items-end justify-between">
                   <div>
                     <span className="block font-mono-telemetry text-[10px] text-[#C5B396] uppercase tracking-widest mb-1">
-                      {isLockedToGithub
+                      {isEasterEggLocked
+                        ? 'ANZ PROTOCOL // PERMANENT GLITCH'
+                        : isLockedToGithub
                         ? `${PROFILE_DATA.handle} // GITHUB PROFILE`
                         : `${PROFILE_DATA.handle} // CLICK TO SWITCH`}
                     </span>
                     <h2 className="font-display text-xl text-[#EDEAE4] uppercase tracking-wide leading-none">
-                      ANDHIKA N. HIDAYAT
+                      {isEasterEggLocked ? 'ANZ EMBLEM' : 'ANDHIKA N. HIDAYAT'}
                     </h2>
                     <p className="font-mono-telemetry text-[10px] text-[#8E8A82] mt-1">
-                      SMKN 1 CIANJUR — PPLG
+                      {isEasterEggLocked ? 'SYSTEM ANOMALY // LOCKED' : 'SMKN 1 CIANJUR — PPLG'}
                     </p>
                   </div>
                   <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-[#1A1A1A] border border-[#262626] font-mono-telemetry text-[10px] text-[#EDEAE4]">
