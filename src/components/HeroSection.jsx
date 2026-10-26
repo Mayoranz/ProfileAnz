@@ -403,8 +403,9 @@ export default function HeroSection({
         className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-between gap-4 text-xs font-mono-telemetry uppercase tracking-widest text-[#8E8A82] border-b border-[#262626] pb-4"
       >
         <div className="flex items-center gap-3">
-          <span className="px-2 py-0.5 bg-[#1A1A1A] border border-[#262626] text-[#C5B396] font-bold">
-            {PROFILE_DATA.monogram}
+          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#1A1A1A] border border-[#262626] text-[#C5B396] font-bold">
+            <img src={PROFILE_DATA.logoUrl} alt="ANZ" className="w-3.5 h-3.5 object-cover rounded-sm" />
+            <span>{PROFILE_DATA.monogram}</span>
           </span>
           <span className="text-[#EDEAE4]">
             {PROFILE_DATA.school} — {PROFILE_DATA.major}
@@ -657,8 +658,9 @@ export default function HeroSection({
                       SMKN 1 CIANJUR — PPLG
                     </p>
                   </div>
-                  <span className="px-2 py-1 bg-[#1A1A1A] border border-[#262626] font-mono-telemetry text-[10px] text-[#EDEAE4]">
-                    {PROFILE_DATA.monogram}
+                  <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-[#1A1A1A] border border-[#262626] font-mono-telemetry text-[10px] text-[#EDEAE4]">
+                    <img src={PROFILE_DATA.logoUrl} alt="ANZ" className="w-3.5 h-3.5 object-cover rounded-sm" />
+                    <span>{PROFILE_DATA.monogram}</span>
                   </span>
                 </div>
               </div>

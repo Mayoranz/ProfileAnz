@@ -1,7 +1,8 @@
 export const PROFILE_DATA = {
   fullName: 'Andhika Noor Hidayat',
   handle: 'MAYORANZ',
-  monogram: 'MYZ',
+  monogram: 'ANZ',
+  logoUrl: '/anz-logo.jpg',
   tagline: 'FULL-STACK DEVELOPER // MOBILE APP ENTHUSIAST // PHOTOGRAPHER',
   shortBio:
     'Building high-velocity web & mobile applications one commit at a time. Turning coffee into clean architecture, interactive interfaces, and creative digital experiences.',

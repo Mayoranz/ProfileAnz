@@ -35,14 +35,20 @@ export default function Navbar({ trackMode, setTrackMode }) {
         ref={navBarRef}
         className="max-w-7xl mx-auto flex items-center justify-between gap-3 bg-[#141414]/95 backdrop-blur-md border border-[#262626] rounded-lg px-4 py-2.5 pointer-events-auto"
       >
-        {/* Brand Monogram */}
+        {/* Brand Monogram / Logo */}
         <a
           href="#top"
           className="group flex items-center gap-3 focus:outline-none"
           aria-label="Mayoranz Home"
         >
-          <div className="flex items-center justify-center w-10 h-10 rounded-md bg-[#EDEAE4] text-[#0F0F0F] font-display text-lg tracking-wider group-hover:bg-[#C5B396] transition-colors">
-            <GlitchText text={PROFILE_DATA.monogram} minDelay={4500} maxDelay={8500} />
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-md bg-[#0F0F0F] border border-[#262626] group-hover:border-[#C5B396] overflow-hidden transition-colors shrink-0">
+            <img
+              src={PROFILE_DATA.logoUrl}
+              alt="ANZ Logo"
+              width="40"
+              height="40"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="hidden sm:flex flex-col">
             <span className="font-tech font-bold text-sm tracking-wider text-[#EDEAE4] leading-none group-hover:text-[#C5B396] transition-colors">

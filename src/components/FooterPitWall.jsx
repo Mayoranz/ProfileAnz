@@ -124,9 +124,9 @@ export default function FooterPitWall() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-[#262626] pt-8 font-mono-telemetry text-xs text-[#8E8A82]">
           <div className="flex items-center gap-3">
-            <span className="px-2 py-1 rounded bg-[#EDEAE4] text-[#0F0F0F] font-bold">
-              {PROFILE_DATA.monogram}
-            </span>
+            <div className="w-7 h-7 rounded bg-[#0F0F0F] border border-[#262626] overflow-hidden flex items-center justify-center shrink-0">
+              <img src={PROFILE_DATA.logoUrl} alt="ANZ" className="w-full h-full object-cover" />
+            </div>
             <span>
               © {new Date().getFullYear()} {PROFILE_DATA.fullName}. All Rights Reserved.
             </span>

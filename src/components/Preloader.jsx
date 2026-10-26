@@ -53,6 +53,11 @@ export default function Preloader({ onComplete }) {
       {/* Top Bar */}
       <div className="relative z-10 flex items-center justify-between border-b border-[#262626] pb-4 font-mono-telemetry text-xs tracking-widest uppercase text-[#8E8A82]">
         <div className="flex items-center gap-3">
+          <img
+            src={PROFILE_DATA.logoUrl}
+            alt="ANZ"
+            className="w-5 h-5 rounded-sm object-cover border border-[#262626]"
+          />
           <span className="text-[#EDEAE4] font-bold">
             {PROFILE_DATA.monogram} — {PROFILE_DATA.fullName}
           </span>
