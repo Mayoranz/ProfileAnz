@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  --bg-carbon: #0f0f0f;
+  --bg-surface: #141414;
+  --bg-elevated: #1a1a1a;
+  --accent-sand: #c5b396;
+  --text-bone: #edeae4;
+  --text-muted: #8e8a82;
+  --border-hairline: #262626;
+  --font-display: 'Anton', sans-serif;
+  --font-tech: 'Chakra Petch', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg-carbon);
+  color: var(--text-bone);
+  font-family: var(--font-body);
+}
+
+/* Custom Scrollbar - Matte Charcoal & Warm Sand */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border: 2px solid #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-sand);
+}
+
+/* Typography Utilities */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+.font-tech {
+  font-family: var(--font-tech);
+}
+
+.font-mono-telemetry {
+  font-family: var(--font-mono);
+}
+
+/* Editorial Outline Typography (No Neon) */
+.text-stroke-sand {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(197, 179, 150, 0.55);
+}
+
+.text-stroke-editorial {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(237, 234, 228, 0.25);
+}
+
+/* Subtle Architectural Hairline Grid */
+.bg-telemetry-grid {
+  background-size: 64px 64px;
+  background-image:
+    linear-gradient(to right, rgba(237, 234, 228, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 234, 228, 0.025) 1px, transparent 1px);
+}
+
+.bg-carbon-weave {
+  background-color: #0f0f0f;
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 34s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 36s linear infinite;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+/* Native HTML5 Dialog Modal & Backdrop (Modern Web Guidance compliant, Flat Matte) */
+dialog.telemetry-modal {
+  margin: auto;
+  border: 1px solid #2e2e2e;
+  background: #141414;
+  color: #edeae4;
+  border-radius: 0.75rem;
+  max-width: min(92vw, 860px);
+  width: 100%;
+  padding: 0;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+
+dialog.telemetry-modal::backdrop {
+  background-color: rgba(8, 8, 8, 0.84);
+  backdrop-filter: blur(6px);
+}
+
+/* Editorial Monochrome & Champagne Sand Glitch Text Layers (Zero Neon) */
+.editorial-glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.editorial-glitch-text::before,
+.editorial-glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform, clip-path, opacity;
+}
+
+.editorial-glitch-text.is-glitching::before {
+  opacity: 0.95;
+  color: #c5b396;
+  -webkit-text-stroke: 0px transparent;
+  transform: translate3d(-5px, -1px, 0) skewX(-6deg);
+  clip-path: inset(12% 0 56% 0);
+}
+
+.editorial-glitch-text.is-glitching::after {
+  opacity: 0.95;
+  color: #edeae4;
+  -webkit-text-stroke: 0px transparent;
+  transform: translate3d(5px, 1px, 0) skewX(5deg);
+  clip-path: inset(58% 0 10% 0);
+}
+
+.editorial-scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(15, 15, 15, 0.6) 0px,
+    rgba(15, 15, 15, 0.6) 2px,
+    rgba(197, 179, 150, 0.1) 2px,
+    rgba(197, 179, 150, 0.1) 4px
+  );
+}

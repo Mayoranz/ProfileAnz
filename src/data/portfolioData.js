@@ -1,0 +1,517 @@
+export const PROFILE_DATA = {
+  fullName: 'Andhika Noor Hidayat',
+  handle: 'MAYORANZ',
+  monogram: 'MYZ',
+  tagline: 'FULL-STACK DEVELOPER // MOBILE APP ENTHUSIAST // PHOTOGRAPHER',
+  shortBio:
+    'Building high-velocity web & mobile applications one commit at a time. Turning coffee into clean architecture, interactive interfaces, and creative digital experiences.',
+  school: 'SMKN 1 Cianjur',
+  major: 'PPLG (Pengembangan Perangkat Lunak dan Gim)',
+  location: 'Cianjur, West Java, Indonesia 🇮🇩',
+  coordinates: '6.8222° S, 107.1425° E',
+  status: 'ON THE GRID // OPEN FOR COLLABORATION',
+  funFact: 'I turn coffee into production code & interactive visuals.',
+  formalPhotoUrl: '/andhika-profile.jpg',
+  avatarUrl: 'https://avatars.githubusercontent.com/u/179935363?v=4',
+  altPortraitUrl:
+    'https://raw.githubusercontent.com/Mayoranz/WebProfile/main/photo%20profile.jpg',
+  socials: {
+    github: 'https://github.com/Mayoranz',
+    instagram: 'https://www.instagram.com/mayoranz/',
+    email: 'mailto:hidayatandhika4@gmail.com',
+    emailRaw: 'hidayatandhika4@gmail.com',
+    altEmailRaw: 'AndhikaNoorHidayat2@Gmail.com',
+  },
+  stats: {
+    publicRepos: 26,
+    totalProjectsTracked: 31,
+    followers: 12,
+    following: 18,
+    joinedYear: 2024,
+    coffeeToCodeRatio: '99.4%',
+  },
+};
+
+export const ON_TRACK_SKILLS = [
+  {
+    category: 'FRONTEND ARCHITECTURE',
+    code: '01',
+    description: 'Antarmuka web responsif, manajemen state terstruktur, dan sistem komponen modern.',
+    items: [
+      { name: 'React.js', tag: 'Component UI' },
+      { name: 'JavaScript (ES6+)', tag: 'Core Language' },
+      { name: 'TypeScript', tag: 'Static Typing' },
+      { name: 'HTML5, CSS3 & Tailwind', tag: 'Layout & Styling' },
+    ],
+  },
+  {
+    category: 'BACKEND & API SYSTEMS',
+    code: '02',
+    description: 'Perancangan RESTful API, pemodelan basis data relasional/NoSQL, dan autentikasi.',
+    items: [
+      { name: 'Laravel', tag: 'Full-Stack PHP' },
+      { name: 'PHP', tag: 'Server Side' },
+      { name: 'Node.js & Express', tag: 'REST API' },
+      { name: 'Python', tag: 'Scripting & GUI' },
+    ],
+  },
+  {
+    category: 'MOBILE & DEPLOYMENT',
+    code: '03',
+    description: 'Pengembangan aplikasi mobile lintas platform dan pengelolaan repositori kode.',
+    items: [
+      { name: 'Flutter', tag: 'Cross-Platform' },
+      { name: 'Dart', tag: 'Mobile SDK' },
+      { name: 'Git & GitHub', tag: 'Version Control' },
+      { name: 'Vercel & Prisma / MySQL', tag: 'Data & Cloud' },
+    ],
+  },
+];
+
+export const OFF_TRACK_PERSONA = {
+  headline: 'BEYOND THE TERMINAL // PHOTOGRAPHY, 3D & VISUAL DESIGN',
+  subheadline:
+    'Saat tidak sedang menulis REST API atau merakit komponen React & Flutter, Andhika aktif memotret menggunakan kamera DSLR, mengolah warna di Lightroom, membuat pemodelan 3D di Blender, serta merancang aset vektor.',
+  creativeSuite: [
+    {
+      name: 'DSLR Photography',
+      role: 'Manual Exposure & Visual Framing',
+      badge: 'CAMERA',
+      detail:
+        'Pengoperasian kamera DSLR dengan kontrol manual (ISO, Aperture, Shutter Speed, fokus lensa, & komposisi) untuk fotografi portrait, street, dan dokumentasi.',
+    },
+    {
+      name: 'Adobe Lightroom',
+      role: 'RAW Developing & Color Grading',
+      badge: 'COLOR',
+      detail:
+        'Pengolahan hasil foto kamera DSLR, koreksi eksposur, kurva tone, dan penyelarasan karakter warna.',
+    },
+    {
+      name: 'Blender 3D',
+      role: '3D Modeling & Scene Rendering',
+      badge: '3D',
+      detail:
+        'Pemodelan objek 3D, penataan cahaya studio, dan rendering animasi visual seperti pada proyek GTR-MBG.',
+    },
+    {
+      name: 'Adobe Illustrator',
+      role: 'Vector Identity & Illustration',
+      badge: 'VECTOR',
+      detail:
+        'Pembuatan aset vektor presisi (seperti titikVector.ai pada proyek TIKTIK), tipografi, dan elemen identitas visual.',
+    },
+    {
+      name: 'Adobe Photoshop',
+      role: 'Digital Compositing & Retouching',
+      badge: 'RASTER',
+      detail:
+        'Retouching foto resolusi tinggi, komposisi visual, dan penyiapan aset grafis.',
+    },
+  ],
+  lifestyleCards: [
+    {
+      code: '01',
+      title: 'DSLR Camera & Visual Storytelling',
+      category: 'PHOTOGRAPHY',
+      description:
+        'Menggunakan kamera DSLR secara langsung di lapangan — mulai dari pengaturan eksposur manual, pembacaan cahaya alami, komposisi subjek, hingga alur kerja post-processing di Adobe Lightroom & Photoshop.',
+    },
+    {
+      code: '02',
+      title: 'Software & Game Dev (PPLG)',
+      category: 'EDUCATION',
+      description:
+        'Siswa jurusan PPLG (Pengembangan Perangkat Lunak dan Gim) di SMKN 1 Cianjur yang fokus membangun aplikasi web full-stack dan mobile lintas platform.',
+    },
+    {
+      code: '03',
+      title: 'Reading & Cinema Enthusiast',
+      category: 'PERSPECTIVE',
+      description:
+        'Menghabiskan waktu luang dengan membaca buku dan menonton film untuk memperkaya referensi cerita, komposisi visual kamera, dan cara berpikir.',
+    },
+    {
+      code: '04',
+      title: '200+ Coding Exercises & Mini Labs',
+      category: 'PRACTICE',
+      description:
+        'Menyelesaikan repositori latihan algoritma JS_100_Projek & Python_100_Program serta merakit aplikasi desktop GUI Python Tkinter.',
+    },
+  ],
+};
+
+export const GARAGE_PROJECTS = [
+  {
+    id: 'spec-01',
+    specNumber: '01',
+    name: 'TIKTIK Event Ticketing Platform',
+    repoName: 'tiktik',
+    category: 'WEB & FULL-STACK',
+    trackMode: 'ON TRACK',
+    featured: true,
+    year: '2026',
+    tech: ['Laravel Sanctum', 'React', 'Vite', 'Midtrans API', 'QR Scanner'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/tiktik',
+    mockupUrl: '/mockups/tiktik.png',
+    mockupType: 'web',
+    previewDomain: 'tiktik.app',
+    summary:
+      'Platform pemesanan dan manajemen tiket event full-stack dengan 3 portal role (Buyer, Operator, Admin), antrean Virtual Waiting Room, pembayaran Midtrans, dan pemindai tiket QR.',
+    architecture:
+      'Monorepo full-stack dengan backend Laravel REST API (Sanctum Auth, OTP Email verification, Midtrans Webhook) dan frontend React + Vite, dilengkapi perancangan sistem ERD, Use Case, Activity, & 4 Sequence Diagram (.drawio) serta aset vektor Adobe Illustrator (titikVector.ai).',
+    highlights: [
+      'Portal Buyer: Virtual Waiting Room (/waiting-room), checkout tiket, sinkronisasi pembayaran Midtrans & upload bukti bayar',
+      'Portal Operator: CRUD Event & Banner, manajemen kursi massal (/seats/bulk), QR Ticket Scanner (/scan), & laporan event',
+      'Portal Admin: Moderasi event & operator, manajemen user (ban/reset), mode maintenance, serta activity logs',
+    ],
+  },
+  {
+    id: 'spec-02',
+    specNumber: '02',
+    name: 'Ku-Money SaaS Finance API',
+    repoName: 'ku-money',
+    category: 'BACKEND & API',
+    trackMode: 'ON TRACK',
+    featured: true,
+    year: '2025',
+    tech: ['Node.js', 'Express 5', 'MongoDB', 'Xendit SDK', 'Google OAuth', 'JWT'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/ku-money',
+    mockupUrl: '/mockups/ku-money.png',
+    mockupType: 'web',
+    previewDomain: 'api.kumoney.id/api/v1',
+    summary:
+      'RESTful API manajemen keuangan personal & sistem langganan (SaaS) dengan integrasi pembayaran Xendit, autentikasi Google OAuth + JWT, dan penjadwalan otomatis node-cron.',
+    architecture:
+      'Dibangun di atas Express 5 & Mongoose (MongoDB) dengan arsitektur berlapis (controllers, services, models, dto dengan validasi Joi, middlewares, dan express-rate-limit) serta dokumentasi teknis lengkap (KU-Money-API-Documentation.pdf).',
+    highlights: [
+      '8 modul rute utama: Auth (JWT & Google OAuth), Account, Category, Transaction, Dashboard, Package, Order, & Subscription',
+      'Integrasi payment gateway Xendit (xendit-node) untuk pembelian paket langganan & manajemen akses fitur (UserAccess)',
+      'Dilengkapi Nodemailer untuk notifikasi email otomatis dan node-cron untuk pengecekan masa aktif langganan',
+    ],
+  },
+  {
+    id: 'spec-03',
+    specNumber: '03',
+    name: 'Wanagement Business & Order Suite',
+    repoName: 'wanagement',
+    category: 'WEB & FULL-STACK',
+    trackMode: 'ON TRACK',
+    featured: true,
+    year: '2026',
+    tech: ['Next.js', 'TypeScript', 'Prisma ORM', 'MongoDB', 'Tailwind CSS'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/wanagement',
+    mockupUrl: '/mockups/wanagement.png',
+    mockupType: 'web',
+    previewDomain: 'wanagement.app',
+    summary:
+      'Aplikasi full-stack manajemen pelanggan (CRM), pesanan produk, dan pencatatan transaksi keuangan berbasis Next.js TypeScript, Prisma ORM, dan MongoDB.',
+    architecture:
+      'Memisahkan frontend Next.js (App Router + Tailwind CSS) dan backend Node.js/TypeScript dengan Prisma Client yang memetakan relasi model User, Customer, Order, dan Transaction di MongoDB.',
+    highlights: [
+      'Manajemen data Customer (nama, kontak telepon, catatan khusus) yang terhubung langsung dengan riwayat Order',
+      'Pelacakan Order mencakup nama produk, harga satuan, kuantitas, kalkulasi total otomatis, dan status pesanan',
+      'Modul Transaction untuk mencatat arus pemasukan/pengeluaran bisnis dengan keamanan tipe data TypeScript penuh',
+    ],
+  },
+  {
+    id: 'spec-04',
+    specNumber: '04',
+    name: 'ZiePoint Student Point Mobile App',
+    repoName: 'ziepoint_app',
+    category: 'MOBILE (FLUTTER)',
+    trackMode: 'ON TRACK',
+    featured: true,
+    year: '2026',
+    tech: ['Flutter', 'Dart', 'Provider', 'Material 3', 'REST API'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/ziepoint_app',
+    mockupUrl: '/mockups/ziepoint-logo.svg',
+    mockupType: 'android-logo',
+    previewDomain: 'com.mayoranz.ziepoint_app',
+    summary:
+      'Aplikasi mobile Flutter multi-role (Guru & Murid) untuk pencatatan dan pemantauan poin prestasi serta pelanggaran siswa secara terstruktur.',
+    architecture:
+      'Menggunakan state management Provider (MultiProvider & AuthProvider) dengan pemisahan struktur folder models, pages, providers, services, dan widgets berbasis desain Material 3.',
+    highlights: [
+      'Autentikasi berbasis peran yang mengarahkan pengguna secara dinamis ke DashboardGuruPage atau DashboardMuridPage',
+      'Modul lengkap: Daftar & Detail Siswa (siswa_page, detail_siswa_page), halaman Prestasi, dan halaman Pelanggaran',
+      'Fitur Tambah Catatan (tambah_catatan_page) bagi guru untuk menginput poin siswa secara langsung dari perangkat mobile',
+    ],
+  },
+  {
+    id: 'spec-05',
+    specNumber: '05',
+    name: 'appMuslim Ibadah Companion',
+    repoName: 'appMuslim',
+    category: 'MOBILE (FLUTTER)',
+    trackMode: 'ON TRACK',
+    featured: true,
+    year: '2026',
+    tech: ['Flutter', 'Dart', 'MVVM Architecture', 'Provider', 'REST API'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/appMuslim',
+    mockupUrl: '/mockups/appmuslim-logo.svg',
+    mockupType: 'android-logo',
+    previewDomain: 'com.mayoranz.appmuslim',
+    summary:
+      'Aplikasi mobile pendamping ibadah Muslim berbasis Flutter yang menyediakan fitur Al-Qur’an Digital, Jadwal Shalat, Kumpulan Doa Harian, dan Arah Kiblat.',
+    architecture:
+      'Menerapkan pola arsitektur MVVM (Model - Repository - ViewModel - View) menggunakan MultiProvider untuk mengelola ShalatViewModel, SuratListViewModel, SuratDetailViewModel, dan DoaViewModel.',
+    highlights: [
+      'Modul Al-Qur’an: Daftar surat (surat_list_page) dan pembacaan ayat detail (surat_detail_page) melalui QuranRepository',
+      'Modul Jadwal Shalat & Kiblat: Informasi waktu shalat harian (shalat_page) serta penunjuk arah kiblat (kiblat_page)',
+      'Modul Doa Harian: Kumpulan doa lengkap beserta halaman detail bacaan (doa_page & doa_detail_page)',
+    ],
+  },
+  {
+    id: 'spec-06',
+    specNumber: '06',
+    name: 'POS-Jewellery React Cashier',
+    repoName: 'POS-jewellery',
+    category: 'WEB & FULL-STACK',
+    trackMode: 'ON TRACK',
+    featured: true,
+    year: '2026',
+    tech: ['React', 'Vite', 'React Router', 'Context API', 'CSS3'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/POS-jewellery',
+    mockupUrl: '/mockups/pos-jewellery.png',
+    mockupType: 'web',
+    previewDomain: 'pos-jewellery.app',
+    summary:
+      'Aplikasi Point of Sale (POS) berbasis React untuk toko perhiasan dengan fitur dashboard analitik, manajemen produk, kasir penjualan, laci keranjang (CartDrawer), dan riwayat transaksi.',
+    architecture:
+      'Dibangun menggunakan React + Vite dengan React Router DOM (BrowserRouter) untuk navigasi 4 halaman utama dan React Context API (AppProvider) untuk mengelola state keranjang dan transaksi.',
+    highlights: [
+      '4 halaman terintegrasi: Dashboard (/), Katalog Products (/products), Kasir Sales (/sales), dan Riwayat Transactions (/transactions)',
+      'Komponen CartDrawer interaktif yang memudahkan kasir mengelola item perhiasan sebelum checkout',
+      'State global terpusat di AppContext untuk sinkronisasi stok dan transaksi penjualan secara instan',
+    ],
+  },
+  {
+    id: 'spec-07',
+    specNumber: '07',
+    name: 'Management-Inventory & Card Stock',
+    repoName: 'Management-Inventory',
+    category: 'WEB & FULL-STACK',
+    trackMode: 'ON TRACK',
+    featured: false,
+    year: '2026',
+    tech: ['Laravel', 'PHP', 'Blade', 'MySQL', 'RBAC Auth'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/Management-Inventory',
+    mockupUrl: '/mockups/management-inventory.png',
+    mockupType: 'web',
+    previewDomain: 'inventory-cardstock.app',
+    summary:
+      'Sistem informasi manajemen gudang, varian produk, dan pelacakan Kartu Stok berbasis nomor SKU menggunakan framework Laravel.',
+    architecture:
+      'Aplikasi full-stack Laravel dengan proteksi middleware autentikasi & role admin, mengelola entitas CategoryProduct, Product, VarianProduct, Inventory, dan CardStock.',
+    highlights: [
+      'Modul Master Data terstruktur untuk CRUD Kategori Produk, Produk Utama, dan Varian Produk',
+      'Fitur Kartu Stok (/card-stock/{no_sku}) untuk melacak riwayat pergerakan stok masuk/keluar per SKU secara akurat',
+      'Manajemen pengguna khusus Admin (/users) yang diproteksi dengan middleware otorisasi',
+    ],
+  },
+  {
+    id: 'spec-08',
+    specNumber: '08',
+    name: 'Laravel + React Sanctum CRUD',
+    repoName: 'Laravel-ReactProjectAPI',
+    category: 'WEB & FULL-STACK',
+    trackMode: 'ON TRACK',
+    featured: false,
+    year: '2026',
+    tech: ['Laravel 11', 'React', 'Laravel Sanctum', 'REST API'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/Laravel-ReactProjectAPI',
+    mockupUrl: '/mockups/laravel-react.png',
+    mockupType: 'web',
+    previewDomain: 'laravel-react-api',
+    summary:
+      'Proyek integrasi full-stack yang memadukan backend Laravel REST API (autentikasi token Sanctum & CRUD Post) dengan frontend Single Page Application (SPA) React.',
+    architecture:
+      'Terdiri dari dua direktori terpisah: backend-api-main (Laravel dengan AuthController & PostController apiResource) dan frontend-react-main (klien React yang mengonsumsi endpoint API).',
+    highlights: [
+      'Autentikasi API aman menggunakan Laravel Sanctum (/register, /login, /logout, dan proteksi rute /user)',
+      'RESTful API Resource (/api/posts) untuk operasi Create, Read, Update, dan Delete data postingan',
+      'Arsitektur decoupled (terpisah) antara backend API dan frontend React',
+    ],
+  },
+  {
+    id: 'spec-09',
+    specNumber: '09',
+    name: 'Cafe Menu & Admin Dashboard',
+    repoName: 'cafe',
+    category: 'BACKEND & API',
+    trackMode: 'ON TRACK',
+    featured: false,
+    year: '2025',
+    tech: ['Laravel', 'PHP', 'Eloquent ORM', 'Blade', 'MySQL'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/cafe',
+    mockupUrl: '/mockups/cafe.png',
+    mockupType: 'web',
+    previewDomain: 'cafe-katalog.app',
+    summary:
+      'Aplikasi web katalog menu kafe interaktif dan panel administrasi pengelolaan produk serta kategori berbasis Laravel.',
+    architecture:
+      'Menggunakan arsitektur MVC Laravel dengan model Eloquent Produk dan Kategori, memisahkan rute katalog publik pelanggan (/) dan rute manajemen admin (/admin).',
+    highlights: [
+      'Halaman menu pelanggan dengan fitur filter produk dinamis berdasarkan kategori (?kategori=)',
+      'Panel Admin (/admin) dilengkapi Dashboard ringkasan serta CRUD penuh untuk ProdukController dan KategoriController',
+      'Query Eloquent yang bersih dan responsif untuk pengelolaan katalog F&B',
+    ],
+  },
+  {
+    id: 'spec-10',
+    specNumber: '10',
+    name: 'GTR-MBG 3D Automotive Showcase',
+    repoName: 'GTR-MBG',
+    category: 'OFF-TRACK LAB',
+    trackMode: 'OFF TRACK',
+    featured: true,
+    year: '2026',
+    tech: ['React 19', 'Framer Motion', 'Tailwind CSS', 'Blender 3D Video'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/GTR-MBG',
+    mockupUrl: '/mockups/gtr-mbg.png',
+    mockupType: 'web',
+    previewDomain: 'gtr-mbg.showcase',
+    summary:
+      'Landing page otomotif interaktif untuk showcase visual Nissan GT-R MBG yang memadukan animasi render 3D (rotasi mobil, instalasi bodi, & aksi berkendara) dengan React & Framer Motion.',
+    architecture:
+      'Dibangun dengan React 19, Vite, Tailwind CSS v4, dan Framer Motion, mengintegrasikan aset video render 3D (Car_Rotate.mp4, body_installed.mp4, car_drive.mp4) ke dalam komponen VideoShowcase dan Gallery.',
+    highlights: [
+      'Perpaduan keahlian koding frontend (React + Framer Motion) dengan produksi visual 3D otomotif',
+      'Terdiri dari seksi Hero, About, Features, VideoShowcase interaktif, dan Gallery beresolusi tinggi',
+      'Tema gelap agresif (gtr-black & gtr-white) yang menonjolkan detail visual mobil',
+    ],
+  },
+  {
+    id: 'spec-11',
+    specNumber: '11',
+    name: 'UndanganUltah Interactive Web',
+    repoName: 'UndanganUltah',
+    category: 'OFF-TRACK LAB',
+    trackMode: 'OFF TRACK',
+    featured: true,
+    year: '2026',
+    tech: ['React', 'Framer Motion', 'Vite', 'Web Audio API', 'Vercel'],
+    liveUrl: 'https://undangan-acha.vercel.app',
+    repoUrl: 'https://github.com/Mayoranz/UndanganUltah',
+    mockupUrl: '/mockups/undangan-ultah.png',
+    mockupType: 'web',
+    previewDomain: 'undangan-acha.vercel.app',
+    summary:
+      'Aplikasi web undangan ulang tahun digital interaktif 4-layar dengan animasi amplop Framer Motion, personalisasi nama tamu di localStorage, dan pemutar musik latar.',
+    architecture:
+      'Menggunakan state transisi bertahap di React yang dibungkus dengan Framer Motion AnimatePresence (WelcomeScreen -> EnvelopeScreen -> LetterScreen -> EventScreen) serta kontrol audio HTML5.',
+    highlights: [
+      'Alur interaktif 4 layar: Input nama tamu, animasi buka amplop personal, surat undangan, dan detail lokasi/waktu acara',
+      'Dilengkapi MusicOverlay dan tombol mengambang MusicPlayer untuk memutar musik latar (/music.mp3) secara mulus',
+      'Di-deploy secara live di Vercel (undangan-acha.vercel.app) dengan tampilan mobile-first',
+    ],
+  },
+  {
+    id: 'spec-12',
+    specNumber: '12',
+    name: 'Python Tkinter GUI & 200+ Code Labs',
+    repoName: 'Projek2_MesinPengolahAngka',
+    category: 'OFF-TRACK LAB',
+    trackMode: 'OFF TRACK',
+    featured: false,
+    year: '2025',
+    tech: ['Python', 'Tkinter GUI', 'Pillow (PIL)', 'JavaScript'],
+    liveUrl: null,
+    repoUrl: 'https://github.com/Mayoranz/Projek2_MesinPengolahAngka',
+    mockupUrl: '/mockups/python-gui.png',
+    mockupType: 'web',
+    previewDomain: 'Pengolah_angka.py (Tkinter GUI)',
+    summary:
+      'Koleksi aplikasi desktop GUI Python Tkinter (Program Pengolahan Angka & Khodam Generator) serta maraton 200+ program algoritma di repositori Python_100_Program & JS_100_Projek.',
+    architecture:
+      'Menggunakan pustaka standar Python Tkinter (Listbox, Canvas, Entry, Messagebox) dan PIL (ImageTk) untuk aplikasi GUI desktop, ditambah ratusan skrip algoritma mandiri.',
+    highlights: [
+      'Mesin Pengolah Angka (Pengolah angka.py): Input list angka interaktif, fitur Edit/Update item terpilih di Listbox, dan kalkulasi otomatis Jumlah, Rata-rata, Maksimum, & Minimum',
+      'Khodam Generator (KhodamGenerator.py): Aplikasi GUI berbasis Tkinter Canvas dengan background gambar kustom (Pillow) dan generator kombinasi kata acak',
+      'Maraton 100 Program Python & 100 Projek JS: Mencakup kalkulator fisika (Energi Kinetik, Gaya, Massa Jenis), konversi Romawi, simulasi kasir/parkir, hingga utilitas DOM',
+    ],
+  },
+];
+
+export const CERTIFICATES_DATA = [
+  {
+    id: 'cert-01',
+    code: '01',
+    title: 'Belajar Dasar Pemrograman Web',
+    issuer: 'Dicoding Indonesia (Google Developers Authorized Training Partner)',
+    date: '14 April 2026',
+    validUntil: '14 April 2029',
+    hours: '41 Jam Pembelajaran',
+    category: 'SERTIFIKASI TEKNIS',
+    credentialId: '07Z670NL2PQR',
+    imageUrl: '/certificates/cert-dasar-web.png',
+    pdfUrl: '/certificates/sertifikat_course_ds.pdf',
+    credentialUrl: 'https://www.dicoding.com/certificates/07Z670NL2PQR',
+    skills: ['HTML5 Semantik', 'CSS3 & Box Model', 'Flexbox Layout', 'Media Query'],
+    description:
+      'Membahas tuntas fondasi pembuatan website menggunakan HTML semantik dan CSS3 terstruktur hingga evaluasi ujian akhir serta submission proyek halaman website responsif (Total 41 Jam Pembelajaran).',
+    modules: [
+      'Pendahuluan & Pengenalan HTML: Anatomi website, server & client, serta struktur dasar dokumen HTML (1 jam 50 menit)',
+      'Pendalaman HTML: Pengorganisasian konten dengan elemen semantik, generic element, tabel, serta elemen inline & block (6 jam 45 menit)',
+      'Pengenalan & Pendalaman CSS: Selector variatif, box model, shadow, positioning, float, dan media query (17 jam 10 menit)',
+      'Layout Responsif dengan Flexbox & Proyek Akhir: Teknik layouting Flexbox untuk perangkat mobile & submission website (14 jam 20 menit)',
+    ],
+  },
+  {
+    id: 'cert-02',
+    code: '02',
+    title: 'Belajar Membuat Front-End Web untuk Pemula',
+    issuer: 'Dicoding Indonesia',
+    date: '25 April 2026',
+    validUntil: '25 April 2029',
+    hours: '45 Jam Pembelajaran',
+    category: 'SERTIFIKASI TEKNIS',
+    credentialId: 'JMZVOEQO3XN9',
+    imageUrl: '/certificates/cert-frontend-pemula.png',
+    pdfUrl: '/certificates/sertifikat_course_fe.pdf',
+    credentialUrl: 'https://www.dicoding.com/certificates/JMZVOEQO3XN9',
+    skills: ['BOM & DOM Manipulation', 'Interactive HTML Events', 'Web Storage API', 'Front-End Architecture'],
+    description:
+      'Mengembangkan aplikasi front-end web interaktif sesuai standar industri dengan teknik manipulasi DOM JavaScript, event handling dinamis, dan penyimpanan data lokal menggunakan Web Storage API (Total 45 Jam Pembelajaran).',
+    modules: [
+      'Browser Object Model (BOM) & Document Object Model (DOM): Teknik pemanipulasian elemen DOM menggunakan JavaScript (7 jam 55 menit)',
+      'Interaktif dengan Event: Penerapan event listener dan custom event dalam menciptakan interaktivitas pada elemen HTML (10 jam 45 menit)',
+      'Penyimpanan Data dengan Web Storage: Penggunaan API browser localStorage & sessionStorage beserta tipe-tipe storage (8 jam 25 menit)',
+      'Evaluasi Pembelajaran & Submission Proyek Akhir: Pembuatan aplikasi website interaktif dengan manipulasi DOM dan Web Storage',
+    ],
+  },
+  {
+    id: 'cert-03',
+    code: '03',
+    title: 'Belajar Dasar Pemrograman JavaScript',
+    issuer: 'Dicoding Indonesia (Standar Kompetensi Tervalidasi AWS)',
+    date: '25 April 2026',
+    validUntil: '25 April 2029',
+    hours: '46 Jam Pembelajaran',
+    category: 'SERTIFIKASI TEKNIS',
+    credentialId: 'QLZ99VJOMZ5D',
+    imageUrl: '/certificates/cert-javascript.png',
+    pdfUrl: '/certificates/sertifikat_course_js.pdf',
+    credentialUrl: 'https://www.dicoding.com/certificates/QLZ99VJOMZ5D',
+    skills: ['Node.js & ES Modules', 'OOP & Functional JS', 'Async Promise / Await', 'AWS Validated'],
+    description:
+      'Menguasai dasar pemrograman JavaScript untuk pengembangan aplikasi web & Node.js menggunakan standar kompetensi industri yang divalidasi oleh AWS (Total 46 Jam Pembelajaran).',
+    modules: [
+      'Gerbang Dunia JavaScript & Sintaksis: Runtime Browser/Node.js/Bun/Deno, tipe data, operator, function, dan alur program (8 jam 15 menit)',
+      'Struktur Data & Modularisasi Harmonis: Pengelolaan Object, Array, Map, Set, serta pemecahan berkas dengan ECMAScript Module (5 jam 35 menit)',
+      'OOP & Functional Programming: Paradigma Object-Oriented Programming dan Functional Programming di JavaScript (7 jam 20 menit)',
+      'Asynchronous Process & Code Quality: Penanganan callback, Promise, async/await, serta penulisan kode yang konsisten dan teruji (11 jam 10 menit)',
+    ],
+  },
+];
